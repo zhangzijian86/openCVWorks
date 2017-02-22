@@ -1,6 +1,6 @@
 #include <cv.h>
 #include <highgui.h>
-
+//./AddWeighted  1.jpg  2.jpg  700 230 150 150 0.7 0.3
 int main(int argc,char** argv){
 	IplImage *src1,*src2;
 	if(argc == 9 &&((src1 = cvLoadImage(argv[1],1)) != 0)&&
@@ -20,7 +20,7 @@ int main(int argc,char** argv){
 		cvAddWeighted(src1,alpha,src2,beta,0.0,src1);
 
 		cvResetImageROI(src1);
-		cvResetImageROI(src2);
+		//cvResetImageROI(src2);
 
 		cvNamedWindow("cvAddWeighted",1);
 
